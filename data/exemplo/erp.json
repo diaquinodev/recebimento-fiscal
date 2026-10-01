@@ -1,0 +1,1018 @@
+{
+  "compradora": {
+    "cnpj": "42424242000152",
+    "razao_social": "Indústria Exemplo S.A.",
+    "uf": "SP"
+  },
+  "tolerancias": {
+    "preco_percentual": "0.02",
+    "quantidade_unidades": "0",
+    "imposto_reais": "0.05"
+  },
+  "fornecedores": [
+    {
+      "cnpj": "10101010000177",
+      "razao_social": "Rolamentos Alfa Ltda.",
+      "uf": "SP",
+      "email": "faturamento@alfa.exemplo"
+    },
+    {
+      "cnpj": "20202020000152",
+      "razao_social": "Ferragens Beta Comercial Ltda.",
+      "uf": "MG",
+      "email": "faturamento@beta.exemplo"
+    },
+    {
+      "cnpj": "30303030000138",
+      "razao_social": "Lubrificantes Gama S.A.",
+      "uf": "PR",
+      "email": "faturamento@gama.exemplo"
+    },
+    {
+      "cnpj": "40404040000113",
+      "razao_social": "EPI Delta Distribuidora Ltda.",
+      "uf": "RJ",
+      "email": "faturamento@delta.exemplo"
+    },
+    {
+      "cnpj": "50505050000107",
+      "razao_social": "Elétrica Ômega Ltda.",
+      "uf": "SP",
+      "email": "faturamento@ômega.exemplo"
+    },
+    {
+      "cnpj": "60606060000184",
+      "razao_social": "Embalagens Sigma Ltda.",
+      "uf": "SC",
+      "email": "faturamento@sigma.exemplo"
+    }
+  ],
+  "pedidos": [
+    {
+      "numero": "4500000001",
+      "fornecedor_cnpj": "20202020000152",
+      "data": "2026-09-02",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "LUV-NIT",
+          "descricao": "Luva nitrílica (caixa com 100)",
+          "ncm": "40151900",
+          "quantidade": "100",
+          "preco_unitario": "64.90",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        },
+        {
+          "item": 20,
+          "codigo": "CX-PAP",
+          "descricao": "Caixa de papelão ondulado 40x30x30",
+          "ncm": "48191000",
+          "quantidade": "50",
+          "preco_unitario": "4.75",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        },
+        {
+          "item": 30,
+          "codigo": "FIT-ADE",
+          "descricao": "Fita adesiva industrial 45 mm",
+          "ncm": "39191010",
+          "quantidade": "10",
+          "preco_unitario": "8.40",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.10"
+        }
+      ]
+    },
+    {
+      "numero": "4500000002",
+      "fornecedor_cnpj": "30303030000138",
+      "data": "2026-09-03",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CAB-2.5",
+          "descricao": "Cabo flexível 2,5 mm² (rolo 100 m)",
+          "ncm": "85444900",
+          "quantidade": "5",
+          "preco_unitario": "289.00",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 20,
+          "codigo": "FIT-ADE",
+          "descricao": "Fita adesiva industrial 45 mm",
+          "ncm": "39191010",
+          "quantidade": "10",
+          "preco_unitario": "8.40",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.10"
+        }
+      ]
+    },
+    {
+      "numero": "4500000003",
+      "fornecedor_cnpj": "40404040000113",
+      "data": "2026-09-04",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "FIT-ADE",
+          "descricao": "Fita adesiva industrial 45 mm",
+          "ncm": "39191010",
+          "quantidade": "10",
+          "preco_unitario": "8.40",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.10"
+        },
+        {
+          "item": 20,
+          "codigo": "OLE-68",
+          "descricao": "Óleo hidráulico ISO 68 (balde 20 L)",
+          "ncm": "27101932",
+          "quantidade": "10",
+          "preco_unitario": "412.50",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        },
+        {
+          "item": 30,
+          "codigo": "COR-B",
+          "descricao": "Correia em V perfil B-50",
+          "ncm": "40103100",
+          "quantidade": "20",
+          "preco_unitario": "71.20",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    },
+    {
+      "numero": "4500000004",
+      "fornecedor_cnpj": "50505050000107",
+      "data": "2026-09-05",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "PAR-M8",
+          "descricao": "Parafuso sextavado M8 x 40 (cento)",
+          "ncm": "73181500",
+          "quantidade": "50",
+          "preco_unitario": "54.00",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    },
+    {
+      "numero": "4500000005",
+      "fornecedor_cnpj": "60606060000184",
+      "data": "2026-09-06",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CX-PAP",
+          "descricao": "Caixa de papelão ondulado 40x30x30",
+          "ncm": "48191000",
+          "quantidade": "20",
+          "preco_unitario": "4.75",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        }
+      ]
+    },
+    {
+      "numero": "4500000006",
+      "fornecedor_cnpj": "10101010000177",
+      "data": "2026-09-07",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CAB-2.5",
+          "descricao": "Cabo flexível 2,5 mm² (rolo 100 m)",
+          "ncm": "85444900",
+          "quantidade": "50",
+          "preco_unitario": "289.00",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 20,
+          "codigo": "FIT-ADE",
+          "descricao": "Fita adesiva industrial 45 mm",
+          "ncm": "39191010",
+          "quantidade": "100",
+          "preco_unitario": "8.40",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.10"
+        },
+        {
+          "item": 30,
+          "codigo": "ROL-6204",
+          "descricao": "Rolamento rígido de esferas 6204",
+          "ncm": "84821010",
+          "quantidade": "5",
+          "preco_unitario": "38.90",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    },
+    {
+      "numero": "4500000007",
+      "fornecedor_cnpj": "20202020000152",
+      "data": "2026-09-08",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "PAR-M8",
+          "descricao": "Parafuso sextavado M8 x 40 (cento)",
+          "ncm": "73181500",
+          "quantidade": "20",
+          "preco_unitario": "54.00",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 20,
+          "codigo": "CAB-2.5",
+          "descricao": "Cabo flexível 2,5 mm² (rolo 100 m)",
+          "ncm": "85444900",
+          "quantidade": "100",
+          "preco_unitario": "289.00",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    },
+    {
+      "numero": "4500000008",
+      "fornecedor_cnpj": "30303030000138",
+      "data": "2026-09-09",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "LUV-NIT",
+          "descricao": "Luva nitrílica (caixa com 100)",
+          "ncm": "40151900",
+          "quantidade": "5",
+          "preco_unitario": "64.90",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        },
+        {
+          "item": 20,
+          "codigo": "CX-PAP",
+          "descricao": "Caixa de papelão ondulado 40x30x30",
+          "ncm": "48191000",
+          "quantidade": "5",
+          "preco_unitario": "4.75",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        }
+      ]
+    },
+    {
+      "numero": "4500000009",
+      "fornecedor_cnpj": "40404040000113",
+      "data": "2026-09-10",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "LUV-NIT",
+          "descricao": "Luva nitrílica (caixa com 100)",
+          "ncm": "40151900",
+          "quantidade": "5",
+          "preco_unitario": "64.90",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        },
+        {
+          "item": 20,
+          "codigo": "FIT-ADE",
+          "descricao": "Fita adesiva industrial 45 mm",
+          "ncm": "39191010",
+          "quantidade": "10",
+          "preco_unitario": "8.40",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.10"
+        },
+        {
+          "item": 30,
+          "codigo": "OLE-68",
+          "descricao": "Óleo hidráulico ISO 68 (balde 20 L)",
+          "ncm": "27101932",
+          "quantidade": "5",
+          "preco_unitario": "412.50",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        }
+      ]
+    },
+    {
+      "numero": "4500000010",
+      "fornecedor_cnpj": "50505050000107",
+      "data": "2026-09-11",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CAB-2.5",
+          "descricao": "Cabo flexível 2,5 mm² (rolo 100 m)",
+          "ncm": "85444900",
+          "quantidade": "20",
+          "preco_unitario": "289.00",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 20,
+          "codigo": "LUV-NIT",
+          "descricao": "Luva nitrílica (caixa com 100)",
+          "ncm": "40151900",
+          "quantidade": "10",
+          "preco_unitario": "64.90",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.00"
+        }
+      ]
+    },
+    {
+      "numero": "4500000011",
+      "fornecedor_cnpj": "60606060000184",
+      "data": "2026-09-12",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CX-PAP",
+          "descricao": "Caixa de papelão ondulado 40x30x30",
+          "ncm": "48191000",
+          "quantidade": "20",
+          "preco_unitario": "4.75",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        },
+        {
+          "item": 20,
+          "codigo": "PAR-M8",
+          "descricao": "Parafuso sextavado M8 x 40 (cento)",
+          "ncm": "73181500",
+          "quantidade": "5",
+          "preco_unitario": "54.00",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    },
+    {
+      "numero": "4500000012",
+      "fornecedor_cnpj": "10101010000177",
+      "data": "2026-09-13",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "OLE-68",
+          "descricao": "Óleo hidráulico ISO 68 (balde 20 L)",
+          "ncm": "27101932",
+          "quantidade": "10",
+          "preco_unitario": "412.50",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.00"
+        },
+        {
+          "item": 20,
+          "codigo": "CAB-2.5",
+          "descricao": "Cabo flexível 2,5 mm² (rolo 100 m)",
+          "ncm": "85444900",
+          "quantidade": "10",
+          "preco_unitario": "289.00",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 30,
+          "codigo": "CX-PAP",
+          "descricao": "Caixa de papelão ondulado 40x30x30",
+          "ncm": "48191000",
+          "quantidade": "50",
+          "preco_unitario": "4.75",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.00"
+        }
+      ]
+    },
+    {
+      "numero": "4500000013",
+      "fornecedor_cnpj": "20202020000152",
+      "data": "2026-09-14",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CAB-2.5",
+          "descricao": "Cabo flexível 2,5 mm² (rolo 100 m)",
+          "ncm": "85444900",
+          "quantidade": "100",
+          "preco_unitario": "289.00",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 20,
+          "codigo": "CX-PAP",
+          "descricao": "Caixa de papelão ondulado 40x30x30",
+          "ncm": "48191000",
+          "quantidade": "10",
+          "preco_unitario": "4.75",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        }
+      ]
+    },
+    {
+      "numero": "4500000014",
+      "fornecedor_cnpj": "30303030000138",
+      "data": "2026-09-15",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CX-PAP",
+          "descricao": "Caixa de papelão ondulado 40x30x30",
+          "ncm": "48191000",
+          "quantidade": "10",
+          "preco_unitario": "4.75",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        },
+        {
+          "item": 20,
+          "codigo": "FIT-ADE",
+          "descricao": "Fita adesiva industrial 45 mm",
+          "ncm": "39191010",
+          "quantidade": "5",
+          "preco_unitario": "8.40",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.10"
+        },
+        {
+          "item": 30,
+          "codigo": "ROL-6204",
+          "descricao": "Rolamento rígido de esferas 6204",
+          "ncm": "84821010",
+          "quantidade": "20",
+          "preco_unitario": "38.90",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    },
+    {
+      "numero": "4500000015",
+      "fornecedor_cnpj": "40404040000113",
+      "data": "2026-09-16",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CAB-2.5",
+          "descricao": "Cabo flexível 2,5 mm² (rolo 100 m)",
+          "ncm": "85444900",
+          "quantidade": "10",
+          "preco_unitario": "289.00",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 20,
+          "codigo": "ROL-6204",
+          "descricao": "Rolamento rígido de esferas 6204",
+          "ncm": "84821010",
+          "quantidade": "100",
+          "preco_unitario": "38.90",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    },
+    {
+      "numero": "4500000016",
+      "fornecedor_cnpj": "50505050000107",
+      "data": "2026-09-17",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CX-PAP",
+          "descricao": "Caixa de papelão ondulado 40x30x30",
+          "ncm": "48191000",
+          "quantidade": "50",
+          "preco_unitario": "4.75",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.00"
+        },
+        {
+          "item": 20,
+          "codigo": "PAR-M8",
+          "descricao": "Parafuso sextavado M8 x 40 (cento)",
+          "ncm": "73181500",
+          "quantidade": "50",
+          "preco_unitario": "54.00",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 30,
+          "codigo": "COR-B",
+          "descricao": "Correia em V perfil B-50",
+          "ncm": "40103100",
+          "quantidade": "50",
+          "preco_unitario": "71.20",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    },
+    {
+      "numero": "4500000017",
+      "fornecedor_cnpj": "60606060000184",
+      "data": "2026-09-18",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CAB-2.5",
+          "descricao": "Cabo flexível 2,5 mm² (rolo 100 m)",
+          "ncm": "85444900",
+          "quantidade": "10",
+          "preco_unitario": "289.00",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    },
+    {
+      "numero": "4500000018",
+      "fornecedor_cnpj": "10101010000177",
+      "data": "2026-09-19",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CAB-2.5",
+          "descricao": "Cabo flexível 2,5 mm² (rolo 100 m)",
+          "ncm": "85444900",
+          "quantidade": "100",
+          "preco_unitario": "289.00",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    },
+    {
+      "numero": "4500000019",
+      "fornecedor_cnpj": "20202020000152",
+      "data": "2026-09-20",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "FIT-ADE",
+          "descricao": "Fita adesiva industrial 45 mm",
+          "ncm": "39191010",
+          "quantidade": "10",
+          "preco_unitario": "8.40",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.10"
+        },
+        {
+          "item": 20,
+          "codigo": "OLE-68",
+          "descricao": "Óleo hidráulico ISO 68 (balde 20 L)",
+          "ncm": "27101932",
+          "quantidade": "10",
+          "preco_unitario": "412.50",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.00"
+        }
+      ]
+    },
+    {
+      "numero": "4500000020",
+      "fornecedor_cnpj": "30303030000138",
+      "data": "2026-09-21",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "COR-B",
+          "descricao": "Correia em V perfil B-50",
+          "ncm": "40103100",
+          "quantidade": "5",
+          "preco_unitario": "71.20",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 20,
+          "codigo": "ROL-6204",
+          "descricao": "Rolamento rígido de esferas 6204",
+          "ncm": "84821010",
+          "quantidade": "10",
+          "preco_unitario": "38.90",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 30,
+          "codigo": "FIT-ADE",
+          "descricao": "Fita adesiva industrial 45 mm",
+          "ncm": "39191010",
+          "quantidade": "10",
+          "preco_unitario": "8.40",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.10"
+        }
+      ]
+    },
+    {
+      "numero": "4500000021",
+      "fornecedor_cnpj": "40404040000113",
+      "data": "2026-09-22",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "FIT-ADE",
+          "descricao": "Fita adesiva industrial 45 mm",
+          "ncm": "39191010",
+          "quantidade": "50",
+          "preco_unitario": "8.40",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.10"
+        },
+        {
+          "item": 20,
+          "codigo": "CAB-2.5",
+          "descricao": "Cabo flexível 2,5 mm² (rolo 100 m)",
+          "ncm": "85444900",
+          "quantidade": "50",
+          "preco_unitario": "289.00",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 30,
+          "codigo": "ROL-6204",
+          "descricao": "Rolamento rígido de esferas 6204",
+          "ncm": "84821010",
+          "quantidade": "100",
+          "preco_unitario": "38.90",
+          "aliquota_icms": "0.12",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    },
+    {
+      "numero": "4500000022",
+      "fornecedor_cnpj": "50505050000107",
+      "data": "2026-09-23",
+      "itens": [
+        {
+          "item": 10,
+          "codigo": "CAB-2.5",
+          "descricao": "Cabo flexível 2,5 mm² (rolo 100 m)",
+          "ncm": "85444900",
+          "quantidade": "5",
+          "preco_unitario": "289.00",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.05"
+        },
+        {
+          "item": 20,
+          "codigo": "COR-B",
+          "descricao": "Correia em V perfil B-50",
+          "ncm": "40103100",
+          "quantidade": "5",
+          "preco_unitario": "71.20",
+          "aliquota_icms": "0.18",
+          "aliquota_ipi": "0.05"
+        }
+      ]
+    }
+  ],
+  "recebimentos": [
+    {
+      "numero": "5000000001",
+      "pedido": "4500000001",
+      "data": "2026-09-05",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "100"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "50"
+        },
+        {
+          "item_pedido": 30,
+          "quantidade": "10"
+        }
+      ]
+    },
+    {
+      "numero": "5000000002",
+      "pedido": "4500000002",
+      "data": "2026-09-06",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "5"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "10"
+        }
+      ]
+    },
+    {
+      "numero": "5000000003",
+      "pedido": "4500000003",
+      "data": "2026-09-07",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "10"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "10"
+        },
+        {
+          "item_pedido": 30,
+          "quantidade": "20"
+        }
+      ]
+    },
+    {
+      "numero": "5000000005",
+      "pedido": "4500000005",
+      "data": "2026-09-09",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "20"
+        }
+      ]
+    },
+    {
+      "numero": "5000000006",
+      "pedido": "4500000006",
+      "data": "2026-09-10",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "50"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "100"
+        },
+        {
+          "item_pedido": 30,
+          "quantidade": "5"
+        }
+      ]
+    },
+    {
+      "numero": "5000000007",
+      "pedido": "4500000007",
+      "data": "2026-09-11",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "20"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "100"
+        }
+      ]
+    },
+    {
+      "numero": "5000000008",
+      "pedido": "4500000008",
+      "data": "2026-09-12",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "5"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "5"
+        }
+      ]
+    },
+    {
+      "numero": "5000000009",
+      "pedido": "4500000009",
+      "data": "2026-09-13",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "5"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "10"
+        },
+        {
+          "item_pedido": 30,
+          "quantidade": "5"
+        }
+      ]
+    },
+    {
+      "numero": "5000000010",
+      "pedido": "4500000010",
+      "data": "2026-09-14",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "20"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "10"
+        }
+      ]
+    },
+    {
+      "numero": "5000000011",
+      "pedido": "4500000011",
+      "data": "2026-09-15",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "20"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "5"
+        }
+      ]
+    },
+    {
+      "numero": "5000000013",
+      "pedido": "4500000013",
+      "data": "2026-09-17",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "100"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "10"
+        }
+      ]
+    },
+    {
+      "numero": "5000000014",
+      "pedido": "4500000014",
+      "data": "2026-09-18",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "10"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "5"
+        },
+        {
+          "item_pedido": 30,
+          "quantidade": "20"
+        }
+      ]
+    },
+    {
+      "numero": "5000000015",
+      "pedido": "4500000015",
+      "data": "2026-09-19",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "10"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "100"
+        }
+      ]
+    },
+    {
+      "numero": "5000000016",
+      "pedido": "4500000016",
+      "data": "2026-09-20",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "50"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "50"
+        },
+        {
+          "item_pedido": 30,
+          "quantidade": "50"
+        }
+      ]
+    },
+    {
+      "numero": "5000000017",
+      "pedido": "4500000017",
+      "data": "2026-09-21",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "10"
+        }
+      ]
+    },
+    {
+      "numero": "5000000018",
+      "pedido": "4500000018",
+      "data": "2026-09-22",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "100"
+        }
+      ]
+    },
+    {
+      "numero": "5000000019",
+      "pedido": "4500000019",
+      "data": "2026-09-23",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "10"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "10"
+        }
+      ]
+    },
+    {
+      "numero": "5000000020",
+      "pedido": "4500000020",
+      "data": "2026-09-24",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "5"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "10"
+        },
+        {
+          "item_pedido": 30,
+          "quantidade": "10"
+        }
+      ]
+    },
+    {
+      "numero": "5000000021",
+      "pedido": "4500000021",
+      "data": "2026-09-25",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "50"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "50"
+        },
+        {
+          "item_pedido": 30,
+          "quantidade": "100"
+        }
+      ]
+    },
+    {
+      "numero": "5000000022",
+      "pedido": "4500000022",
+      "data": "2026-09-26",
+      "itens": [
+        {
+          "item_pedido": 10,
+          "quantidade": "5"
+        },
+        {
+          "item_pedido": 20,
+          "quantidade": "5"
+        }
+      ]
+    }
+  ]
+}
