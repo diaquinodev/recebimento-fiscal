@@ -1,6 +1,0 @@
-{
-  "role": "assistant",
-  "content": "{\n  \"resumo\": \"A NF-e 1012 está bloqueada por falta de recebimento físico da mercadoria. O pedido 4500000012, no valor de R$ 7.397,00, não possui entradas registradas. O histórico do fornecedor mostra que essa divergência é recorrente.\",\n  \"tratativas\": [\n    {\n      \"divergencia\": \"sem_recebimento\",\n      \"acao\": \"aguardar_recebimento\",\n      \"justificativa\": \"A nota fiscal foi emitida, mas a mercadoria ainda não foi recebida fisicamente. É necessário aguardar a entrada da mercadoria para prosseguir com a liberação da nota.\"\n    }\n  ],\n  \"email\": {\n    \"assunto\": \"NF-e 1012 - Pedido 4500000012 - Aguardando Recebimento\",\n    \"corpo\": \"Prezados,\\n\\nInformamos que a NF-e 1012, referente ao pedido 4500000012, encontra-se bloqueada em nosso sistema. Verificamos que ainda não há registro de recebimento físico da mercadoria.\\n\\nPor gentileza, solicitamos que verifiquem o status da entrega e nos informem a previsão de recebimento para que possamos dar andamento ao processo de pagamento.\\n\\nAtenciosamente,\\n[Seu Nome/Departamento]\"\n  }\n}",
-  "refusal": null,
-  "reasoning": null
-}

@@ -309,3 +309,15 @@ class Erp:
         if status:
             consulta = consulta.where(NotaEntradaRow.status == status)
         return list(self.s.scalars(consulta))
+
+    def decidir(self, nota_id: int, decisao: str, observacao: str) -> NotaEntradaRow:
+        """Registra a decisão humana sobre uma nota bloqueada (o agente só propõe)."""
+        if decisao not in {"aprovada", "recusada"}:
+            raise ValueError("decisão deve ser 'aprovada' ou 'recusada'")
+        row = self.s.get(NotaEntradaRow, nota_id)
+        if row is None:
+            raise ValueError("nota não encontrada")
+        row.decisao = decisao
+        row.decisao_obs = observacao
+        self.s.flush()
+        return row

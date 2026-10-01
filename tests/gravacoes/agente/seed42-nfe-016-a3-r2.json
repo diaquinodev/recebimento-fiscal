@@ -1,0 +1,17 @@
+{
+  "role": "assistant",
+  "content": null,
+  "refusal": null,
+  "reasoning": null,
+  "tool_calls": [
+    {
+      "type": "function",
+      "index": 0,
+      "id": "tool_itens_da_nota_8G1HwiOXzbVUFyo6EPZN",
+      "function": {
+        "name": "itens_da_nota",
+        "arguments": "{}"
+      }
+    }
+  ]
+}

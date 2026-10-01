@@ -91,6 +91,11 @@ class Resultado:
         return sum((d.impacto_reais for d in self.divergencias), Decimal(0))
 
 
+def _brl(valor: Decimal) -> str:
+    texto = f"{valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    return f"R$ {texto}"
+
+
 def _decidir(divergencias: list[Divergencia]) -> Resultado:
     if any(d.codigo in REJEICOES for d in divergencias):
         status = Status.REJEITADA
@@ -178,7 +183,7 @@ def avaliar_nota(nota: NotaFiscal, ctx: ContextoErp) -> Resultado:
                 div.append(
                     Divergencia(
                         "quantidade",
-                        f"item {item.numero}: faturado {item.quantidade}, recebido {recebido}",
+                        f"item {item.numero}: faturado {item.quantidade:f}, recebido {recebido:f}",
                         item.numero,
                         esperado=recebido,
                         encontrado=item.quantidade,
@@ -191,8 +196,8 @@ def avaliar_nota(nota: NotaFiscal, ctx: ContextoErp) -> Resultado:
             div.append(
                 Divergencia(
                     "preco",
-                    f"item {item.numero}: unitário {item.valor_unitario} acima do pedido "
-                    f"{ip.preco_unitario} + {tol.preco_percentual:.0%}",
+                    f"item {item.numero}: unitário {_brl(item.valor_unitario)} acima do "
+                    f"pedido {_brl(ip.preco_unitario)} + {tol.preco_percentual:.0%}",
                     item.numero,
                     esperado=ip.preco_unitario,
                     encontrado=item.valor_unitario,

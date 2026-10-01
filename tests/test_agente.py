@@ -124,7 +124,7 @@ def test_agente_corrige_depois_da_trava_e_email_vai_para_o_cadastro(tmp_path: Pa
     errada = json.dumps(_proposta("carta_correcao"))
     certa = json.dumps(_proposta("solicitar_cancelamento_reemissao"))
     ia = Roteiro(
-        _chamada("listar_divergencias", {"nota_id": nota_id}, 1),
+        _chamada("listar_divergencias", {}, 1),
         _chamada("historico_fornecedor", {"cnpj": "00000000000000"}, 2),
         {"role": "assistant", "content": errada},
         {"role": "assistant", "content": certa},

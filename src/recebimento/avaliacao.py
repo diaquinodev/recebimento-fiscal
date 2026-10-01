@@ -177,7 +177,7 @@ def avaliar_ocr(ia: ProvedorIA, seed: int = 42, foto: bool = True) -> RelatorioO
 
 # ============================== agente ==============================
 
-AGENTE_VERSAO = "2"
+AGENTE_VERSAO = "3"
 
 
 @dataclass

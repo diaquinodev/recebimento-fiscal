@@ -1,0 +1,6 @@
+{
+  "role": "assistant",
+  "content": "{\n  \"resumo\": \"A NF-e 1012 da Rolamentos Alfa Ltda. está bloqueada por falta de recebimento físico do pedido 4500000012, no valor de R$ 7.397,00. O histórico do fornecedor aponta que esta é uma divergência recorrente. É necessário aguardar a entrada da mercadoria para liberar a nota.\",\n  \"tratativas\": [\n    {\n      \"divergencia\": \"sem_recebimento\",\n      \"acao\": \"aguardar_recebimento\",\n      \"justificativa\": \"Não há registro de recebimento físico para o pedido 4500000012, que totaliza R$ 7.397,00. A nota não pode ser liberada sem a confirmação da entrada da mercadoria.\"\n    }\n  ],\n  \"email\": {\n    \"assunto\": \"NF-e 1012 - Pedido 4500000012 - Aguardando Recebimento\",\n    \"corpo\": \"Prezados,\\n\\nInformamos que a NF-e 1012, referente ao pedido 4500000012, encontra-se bloqueada em nosso sistema. Não identificamos o registro de recebimento físico da mercadoria.\\n\\nSolicitamos a gentileza de verificar o status da entrega e nos informar a previsão de recebimento para que possamos dar andamento ao processo de pagamento.\\n\\nAtenciosamente,\\n[Seu Nome/Departamento]\"\n  }\n}",
+  "refusal": null,
+  "reasoning": null
+}

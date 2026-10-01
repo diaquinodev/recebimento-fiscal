@@ -70,11 +70,10 @@ FERRAMENTAS: list[dict[str, Any]] = [
         "type": "function",
         "function": {
             "name": "listar_divergencias",
-            "description": "Divergências do 3-way match nesta nota, com impacto em R$.",
+            "description": "Divergências do 3-way match da nota em análise, com impacto em R$.",
             "parameters": {
                 "type": "object",
-                "properties": {"nota_id": {"type": "integer"}},
-                "required": ["nota_id"],
+                "properties": {},
             },
         },
     },
@@ -82,11 +81,10 @@ FERRAMENTAS: list[dict[str, Any]] = [
         "type": "function",
         "function": {
             "name": "itens_da_nota",
-            "description": "Itens da NF-e: quantidade, preço, impostos e pedido/item referenciado.",
+            "description": "Itens da nota em análise: quantidade, preço, impostos e pedido/item.",
             "parameters": {
                 "type": "object",
-                "properties": {"nota_id": {"type": "integer"}},
-                "required": ["nota_id"],
+                "properties": {},
             },
         },
     },
@@ -134,10 +132,14 @@ FERRAMENTAS: list[dict[str, Any]] = [
 
 
 class Ferramentas:
-    """Executa as ferramentas sobre o ERP e guarda todo valor numérico que mostrou à IA."""
+    """Executa as ferramentas sobre o ERP e guarda todo valor numérico que mostrou à IA.
 
-    def __init__(self, erp: Erp) -> None:
+    A nota em análise é fixada pelo código: a IA não escolhe qual nota ler (menor privilégio).
+    """
+
+    def __init__(self, erp: Erp, nota_id: int) -> None:
         self.erp = erp
+        self.nota_id = nota_id
         self.valores_vistos: set[Decimal] = set()
         self.usadas: list[str] = []
 
@@ -163,11 +165,11 @@ class Ferramentas:
             return {"erro": f"argumentos inválidos: {erro}"}
         return dict(self._anotar(resultado))
 
-    def _nota(self, nota_id: int) -> NotaEntradaRow | None:
-        return self.erp.s.get(NotaEntradaRow, int(nota_id))
+    def _nota(self) -> NotaEntradaRow | None:
+        return self.erp.s.get(NotaEntradaRow, self.nota_id)
 
-    def _listar_divergencias(self, nota_id: int) -> dict[str, Any]:
-        nota = self._nota(nota_id)
+    def _listar_divergencias(self, **_ignorados: Any) -> dict[str, Any]:
+        nota = self._nota()
         if nota is None:
             return {"erro": "nota não encontrada"}
         return {
@@ -178,8 +180,8 @@ class Ferramentas:
             "divergencias": json.loads(nota.divergencias_json),
         }
 
-    def _itens_da_nota(self, nota_id: int) -> dict[str, Any]:
-        nota = self._nota(nota_id)
+    def _itens_da_nota(self, **_ignorados: Any) -> dict[str, Any]:
+        nota = self._nota()
         if nota is None:
             return {"erro": "nota não encontrada"}
         try:
@@ -369,7 +371,7 @@ def analisar_nota(erp: Erp, ia: ProvedorIA, nota_id: int, id_chamada: str | None
         raise ValueError("o agente só analisa notas bloqueadas")
     codigos = sorted({d["codigo"] for d in json.loads(nota.divergencias_json)})
     fornecedor = erp.fornecedor(nota.emitente_cnpj)
-    ferramentas = Ferramentas(erp)
+    ferramentas = Ferramentas(erp, nota_id)
     parecer = Parecer(nota_id=nota_id, valido=False)
     mensagens: list[dict[str, Any]] = [
         {"role": "system", "content": SISTEMA},

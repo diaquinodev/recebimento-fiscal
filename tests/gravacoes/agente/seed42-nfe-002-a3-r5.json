@@ -1,0 +1,17 @@
+{
+  "role": "assistant",
+  "content": null,
+  "refusal": null,
+  "reasoning": null,
+  "tool_calls": [
+    {
+      "type": "function",
+      "index": 0,
+      "id": "tool_historico_fornecedor_SVS2m01ghUipvYauk4gp",
+      "function": {
+        "name": "historico_fornecedor",
+        "arguments": "{\"cnpj\":\"30303030000138\"}"
+      }
+    }
+  ]
+}
