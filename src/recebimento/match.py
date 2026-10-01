@@ -36,6 +36,7 @@ REJEICOES = {
     "denegada_sefaz",
     "nao_encontrada_sefaz",
     "destinatario",
+    "leitura_ocr",  # imagem lida sem passar na conferência: revisão humana ou aguardar XML
 }
 
 

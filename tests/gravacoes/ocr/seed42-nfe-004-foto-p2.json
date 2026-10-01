@@ -1,0 +1,6 @@
+{
+  "role": "assistant",
+  "content": "{\n  \"chave_grupos\": [\n    \"3526\",\n    \"0950\",\n    \"5050\",\n    \"5000\",\n    \"0107\",\n    \"5500\",\n    \"1000\",\n    \"0010\",\n    \"0410\",\n    \"7950\",\n    \"6768\"\n  ],\n  \"numero\": 1004,\n  \"serie\": 1,\n  \"data_emissao\": \"2026-09-07\",\n  \"emitente_cnpj\": \"50505050000107\",\n  \"emitente_nome\": \"Elétrica Ômega Ltda.\",\n  \"emitente_uf\": \"SP\",\n  \"destinatario_cnpj\": \"42424242000152\",\n  \"itens\": [\n    {\n      \"codigo\": \"PAR-M8\",\n      \"descricao\": \"Parafuso sextavado M8 x 40 (cento)\",\n      \"ncm\": \"73181500\",\n      \"cfop\": \"5102\",\n      \"quantidade\": \"50\",\n      \"valor_unitario\": \"54.00\",\n      \"valor_total\": \"2700.00\",\n      \"base_icms\": \"2700.00\",\n      \"aliquota_icms_pct\": \"18.00\",\n      \"valor_icms\": \"486.00\",\n      \"aliquota_ipi_pct\": \"5.00\",\n      \"valor_ipi\": \"135.00\",\n      \"pedido\": \"4500000004\",\n      \"item_pedido\": 10\n    }\n  ],\n  \"valor_produtos\": \"2700.00\",\n  \"valor_icms\": \"486.00\",\n  \"valor_ipi\": \"135.00\",\n  \"valor_nota\": \"2835.00\"\n}",
+  "refusal": null,
+  "reasoning": null
+}

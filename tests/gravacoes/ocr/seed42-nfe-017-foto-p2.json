@@ -1,0 +1,6 @@
+{
+  "role": "assistant",
+  "content": "{\n  \"chave_grupos\": [\n    \"4226\",\n    \"0960\",\n    \"6060\",\n    \"6000\",\n    \"0184\",\n    \"5500\",\n    \"1000\",\n    \"0010\",\n    \"1710\",\n    \"8053\",\n    \"6239\"\n  ],\n  \"numero\": 1017,\n  \"serie\": 1,\n  \"data_emissao\": \"2026-09-20\",\n  \"emitente_cnpj\": \"60606060000184\",\n  \"emitente_nome\": \"Embalagens Sigma Ltda.\",\n  \"emitente_uf\": \"SC\",\n  \"destinatario_cnpj\": \"42424242000152\",\n  \"itens\": [\n    {\n      \"codigo\": \"CAB-2.5\",\n      \"descricao\": \"Cabo flexível 2,5 mm² (rolo 100 m)\",\n      \"ncm\": \"85444900\",\n      \"cfop\": \"6102\",\n      \"quantidade\": \"10\",\n      \"valor_unitario\": \"289.00\",\n      \"valor_total\": \"2890.00\",\n      \"base_icms\": \"2890.00\",\n      \"aliquota_icms_pct\": \"12.00\",\n      \"valor_icms\": \"346.80\",\n      \"aliquota_ipi_pct\": \"5.00\",\n      \"valor_ipi\": \"144.50\",\n      \"pedido\": \"4500000017\",\n      \"item_pedido\": 10\n    }\n  ],\n  \"valor_produtos\": \"2890.00\",\n  \"valor_icms\": \"346.80\",\n  \"valor_ipi\": \"144.50\",\n  \"valor_nota\": \"3034.50\"\n}",
+  "refusal": null,
+  "reasoning": null
+}

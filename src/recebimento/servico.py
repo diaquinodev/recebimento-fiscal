@@ -14,8 +14,10 @@ from typing import Protocol
 from recebimento.chave import chave_valida
 from recebimento.dominio import NotaFiscal, PedidoCompra, SituacaoSefaz
 from recebimento.erp import Erp, NotaEntradaRow
+from recebimento.ia import ProvedorIA
 from recebimento.match import ContextoErp, Divergencia, Resultado, Status, avaliar_nota
-from recebimento.nfe_xml import ErroLeituraNFe, ler_xml
+from recebimento.nfe_xml import ErroLeituraNFe, gerar_xml, ler_xml
+from recebimento.ocr import ler_danfe
 
 
 class ConsultaSefaz(Protocol):
@@ -80,6 +82,39 @@ def receber_xml(
         resultado=resultado,
         xml=conteudo,
     )
+
+
+def receber_imagem(
+    erp: Erp,
+    sefaz: ConsultaSefaz,
+    ia: ProvedorIA,
+    imagem: bytes,
+    mime: str,
+    arquivo: str,
+    id_chamada: str | None = None,
+) -> NotaEntradaRow:
+    """DANFE (foto/PDF renderizado) → leitura por IA → conferência → mesmo fluxo do XML.
+
+    Só leitura conferida segue para o 3-way match. A que falha é registrada como rejeitada
+    (`leitura_ocr`) com os problemas, para revisão humana ou até o XML chegar.
+    """
+    leitura = ler_danfe(imagem, mime, ia, id_chamada=id_chamada)
+    nota = leitura.nota
+    if nota is None or not leitura.conferida:
+        mensagem = "; ".join(p.mensagem for p in leitura.problemas) or "leitura incompleta"
+        return erp.registrar(
+            chave=nota.chave if nota else "",
+            arquivo=arquivo,
+            origem="ocr",
+            emitente_cnpj=nota.emitente_cnpj if nota else "",
+            numero=nota.numero if nota else 0,
+            valor_nota=nota.totais.valor_nota if nota else Decimal(0),
+            resultado=Resultado(
+                Status.REJEITADA, (Divergencia("leitura_ocr", f"revisar leitura: {mensagem}"),)
+            ),
+            xml=leitura.bruto.encode(),
+        )
+    return receber_xml(erp, sefaz, gerar_xml(nota, protocolo=False), arquivo, origem="ocr")
 
 
 def codigos(row: NotaEntradaRow) -> list[str]:

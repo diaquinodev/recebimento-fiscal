@@ -1,0 +1,6 @@
+{
+  "role": "assistant",
+  "content": "{\n  \"chave_grupos\": [\n    \"4226\",\n    \"0960\",\n    \"6060\",\n    \"6000\",\n    \"0184\",\n    \"5500\",\n    \"1000\",\n    \"0010\",\n    \"0510\",\n    \"7958\",\n    \"5955\"\n  ],\n  \"numero\": 1005,\n  \"serie\": 1,\n  \"data_emissao\": \"2026-09-08\",\n  \"emitente_cnpj\": \"60606060000184\",\n  \"emitente_nome\": \"Embalagens Sigma Ltda.\",\n  \"emitente_uf\": \"SC\",\n  \"destinatario_cnpj\": \"42424242000152\",\n  \"itens\": [\n    {\n      \"codigo\": \"CX-PAP\",\n      \"descricao\": \"Caixa de papelão ondulado 40x30x30\",\n      \"ncm\": \"48191000\",\n      \"cfop\": \"6102\",\n      \"quantidade\": \"20\",\n      \"valor_unitario\": \"4.75\",\n      \"valor_total\": \"95.00\",\n      \"base_icms\": \"95.00\",\n      \"aliquota_icms_pct\": \"18.00\",\n      \"valor_icms\": \"17.10\",\n      \"aliquota_ipi_pct\": \"0.00\",\n      \"valor_ipi\": \"0.00\",\n      \"pedido\": \"4500000005\",\n      \"item_pedido\": 10\n    }\n  ],\n  \"valor_produtos\": \"95.00\",\n  \"valor_icms\": \"17.10\",\n  \"valor_ipi\": \"0.00\",\n  \"valor_nota\": \"95.00\"\n}",
+  "refusal": null,
+  "reasoning": null
+}

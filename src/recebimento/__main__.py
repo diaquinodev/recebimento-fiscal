@@ -32,6 +32,13 @@ def main(argv: list[str] | None = None) -> int:
     )
     api.add_argument("--porta", type=int, default=8000)
 
+    aocr = sub.add_parser("avaliar-ocr", help="eval da leitura de DANFE (respostas gravadas)")
+    aocr.add_argument("--gravar", action="store_true", help="chama a IA e grava o que faltar")
+    aocr.add_argument("--png", action="store_true", help="imagem limpa em vez de foto")
+
+    ocr = sub.add_parser("ocr", help="lê uma DANFE (imagem) com IA e confere em código")
+    ocr.add_argument("imagem", type=Path)
+
     args = parser.parse_args(argv)
     if args.comando == "gerar":
         cenario = gerar_cenario(seed=args.seed, repeticoes=args.repeticoes)
@@ -62,6 +69,36 @@ def main(argv: list[str] | None = None) -> int:
         import uvicorn
 
         uvicorn.run("recebimento.api:app_demo", factory=True, host="127.0.0.1", port=args.porta)
+    elif args.comando == "avaliar-ocr":
+        from recebimento.avaliacao import avaliar_ocr
+        from recebimento.ia import Gravado, OpenRouter
+
+        pasta = Path("tests/gravacoes/ocr")
+        ia = Gravado(pasta, real=OpenRouter(), modo="gravar") if args.gravar else Gravado(pasta)
+        o = avaliar_ocr(ia, foto=not args.png)
+        print(f"Notas: {o.notas} | campos fiscais corretos: {o.fiscal_correto}")
+        print(f"Idênticas (até acento): {o.identicas} | só acento diferente: {o.so_acento}")
+        print(f"Conferidas: {o.conferidas} | chaves reconstruídas: {o.chaves_reconstruidas}")
+        print(f"Erradas detectadas: {o.erradas_detectadas} | erradas aceitas: {o.erradas_aceitas}")
+        for exemplo in o.exemplos:
+            print("  ·", exemplo)
+        return 0 if o.erradas_aceitas == 0 else 1
+    elif args.comando == "ocr":
+        from recebimento.ia import OpenRouter
+        from recebimento.ocr import ler_danfe
+
+        mime = "image/png" if args.imagem.suffix.lower() == ".png" else "image/jpeg"
+        leitura = ler_danfe(args.imagem.read_bytes(), mime, OpenRouter())
+        if leitura.nota:
+            n = leitura.nota
+            print(f"Chave {n.chave} | NF {n.numero} | emitente {n.emitente_cnpj}")
+            print(f"{len(n.itens)} itens | total R$ {n.totais.valor_nota:,.2f}")
+        for ajuste in leitura.ajustes:
+            print("  ajuste:", ajuste)
+        print("CONFERIDA" if leitura.conferida else "REVISAR:")
+        for p in leitura.problemas:
+            print("  ✕", p.mensagem)
+        return 0 if leitura.conferida else 1
     return 0
 
 
