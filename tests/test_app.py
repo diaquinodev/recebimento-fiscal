@@ -18,6 +18,18 @@ def test_tela_inicial_sem_notas_orienta_o_usuario() -> None:
     assert any("Processar as 24 NF-e" in i.value for i in at.info)
 
 
+def test_cada_visitante_tem_o_proprio_banco() -> None:
+    primeiro = AppTest.from_file(APP, default_timeout=120)
+    primeiro.run()
+    _botao(primeiro, "Processar as 24 NF-e de exemplo").click().run()
+    assert {m.label: m.value for m in primeiro.metric}["Notas recebidas"] == "24"
+
+    segundo = AppTest.from_file(APP, default_timeout=120)
+    segundo.run()
+    assert not segundo.exception
+    assert any("Processar as 24 NF-e" in i.value for i in segundo.info)
+
+
 def test_fluxo_completo_processar_parecer_e_aprovar() -> None:
     at = AppTest.from_file(APP, default_timeout=120)
     at.run()

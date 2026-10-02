@@ -59,13 +59,16 @@ def brl_curto(valor: Decimal) -> str:
     return brl(valor)
 
 
-@st.cache_resource
 def ambiente() -> dict[str, Any]:
-    """Banco em memória com o ERP de exemplo; uma vez por sessão do servidor."""
-    engine = criar_engine()
-    carregar_erp_json(engine, DADOS / "erp.json")
-    sefaz = SefazEmMemoria.de_arquivo(DADOS / "sefaz.json")
-    return {"engine": engine, "sefaz": sefaz}
+    """Banco em memória com o ERP de exemplo, um por visitante: no link público, as notas e
+    decisões de um visitante não podem aparecer para outro."""
+    if "ambiente" not in st.session_state:
+        engine = criar_engine()
+        carregar_erp_json(engine, DADOS / "erp.json")
+        sefaz = SefazEmMemoria.de_arquivo(DADOS / "sefaz.json")
+        st.session_state["ambiente"] = {"engine": engine, "sefaz": sefaz}
+    amb: dict[str, Any] = st.session_state["ambiente"]
+    return amb
 
 
 def provedor(modo: str, pasta: str) -> ProvedorIA:
@@ -97,12 +100,12 @@ with st.sidebar:
     if modo == "real" and not os.environ.get("OPENROUTER_API_KEY"):
         st.warning("Defina OPENROUTER_API_KEY para usar o modo real.")
         modo = "demonstração"
-    if st.button("Processar as 24 NF-e de exemplo", type="primary", use_container_width=True):
+    if st.button("Processar as 24 NF-e de exemplo", type="primary", width="stretch"):
         processar_exemplo()
         st.toast("Notas de exemplo processadas")
 
     arquivos = st.file_uploader("Enviar XML de NF-e", type=["xml"], accept_multiple_files=True)
-    if arquivos and st.button("Receber XML enviados", use_container_width=True):
+    if arquivos and st.button("Receber XML enviados", width="stretch"):
         amb = ambiente()
         with sessao(amb["engine"]) as s:
             for arq in arquivos:
@@ -117,7 +120,7 @@ with st.sidebar:
     nota_exemplo = dict(cen.notas)[escolhida]
     imagem, mime = gerar_imagem(nota_exemplo, foto=True)
     st.image(imagem, caption="DANFE fotografada (fictícia)")
-    if st.button("Ler com IA e receber", use_container_width=True):
+    if st.button("Ler com IA e receber", width="stretch"):
         amb = ambiente()
         with sessao(amb["engine"]) as s:
             row = receber_imagem(
@@ -185,7 +188,7 @@ st.dataframe(
         for r in visiveis
     ],
     hide_index=True,
-    use_container_width=True,
+    width="stretch",
 )
 
 st.divider()
@@ -254,11 +257,11 @@ with dir_:
                     key=f"corpo-{nota_id}",
                 )
                 a, b = st.columns(2)
-                if a.button("✔ Aprovar tratativa", use_container_width=True):
+                if a.button("✔ Aprovar tratativa", width="stretch"):
                     with sessao(amb["engine"]) as s:
                         Erp(s).decidir(nota_id, "aprovada", corpo)
                     st.rerun()
-                if b.button("✖ Recusar", use_container_width=True):
+                if b.button("✖ Recusar", width="stretch"):
                     with sessao(amb["engine"]) as s:
                         Erp(s).decidir(nota_id, "recusada", "parecer recusado pelo analista")
                     st.rerun()
