@@ -1,0 +1,158 @@
+{
+  "nfe-001.xml": {
+    "tipo": "cancelada_sefaz",
+    "status": "rejeitada",
+    "divergencias": [
+      "cancelada_sefaz"
+    ]
+  },
+  "nfe-002.xml": {
+    "tipo": "preco_acima",
+    "status": "bloqueada",
+    "divergencias": [
+      "preco"
+    ]
+  },
+  "nfe-003.xml": {
+    "tipo": "dentro_tolerancia",
+    "status": "liberada",
+    "divergencias": []
+  },
+  "nfe-004.xml": {
+    "tipo": "sem_recebimento",
+    "status": "bloqueada",
+    "divergencias": [
+      "sem_recebimento"
+    ]
+  },
+  "nfe-005.xml": {
+    "tipo": "icms_divergente",
+    "status": "bloqueada",
+    "divergencias": [
+      "icms"
+    ]
+  },
+  "nfe-006.xml": {
+    "tipo": "fornecedor_divergente",
+    "status": "bloqueada",
+    "divergencias": [
+      "fornecedor"
+    ]
+  },
+  "nfe-007.xml": {
+    "tipo": "chave_invalida",
+    "status": "rejeitada",
+    "divergencias": [
+      "chave_invalida"
+    ]
+  },
+  "nfe-008.xml": {
+    "tipo": "ok",
+    "status": "liberada",
+    "divergencias": []
+  },
+  "nfe-008-reenvio.xml": {
+    "tipo": "duplicada",
+    "status": "rejeitada",
+    "divergencias": [
+      "duplicada"
+    ]
+  },
+  "nfe-009.xml": {
+    "tipo": "quantidade_maior",
+    "status": "bloqueada",
+    "divergencias": [
+      "quantidade"
+    ]
+  },
+  "nfe-010.xml": {
+    "tipo": "fornecedor_divergente",
+    "status": "bloqueada",
+    "divergencias": [
+      "fornecedor"
+    ]
+  },
+  "nfe-011.xml": {
+    "tipo": "ok",
+    "status": "liberada",
+    "divergencias": []
+  },
+  "nfe-011-reenvio.xml": {
+    "tipo": "duplicada",
+    "status": "rejeitada",
+    "divergencias": [
+      "duplicada"
+    ]
+  },
+  "nfe-012.xml": {
+    "tipo": "sem_recebimento",
+    "status": "bloqueada",
+    "divergencias": [
+      "sem_recebimento"
+    ]
+  },
+  "nfe-013.xml": {
+    "tipo": "item_sem_pedido",
+    "status": "bloqueada",
+    "divergencias": [
+      "sem_pedido"
+    ]
+  },
+  "nfe-014.xml": {
+    "tipo": "ok",
+    "status": "liberada",
+    "divergencias": []
+  },
+  "nfe-015.xml": {
+    "tipo": "item_sem_pedido",
+    "status": "bloqueada",
+    "divergencias": [
+      "sem_pedido"
+    ]
+  },
+  "nfe-016.xml": {
+    "tipo": "preco_acima",
+    "status": "bloqueada",
+    "divergencias": [
+      "preco"
+    ]
+  },
+  "nfe-017.xml": {
+    "tipo": "chave_invalida",
+    "status": "rejeitada",
+    "divergencias": [
+      "chave_invalida"
+    ]
+  },
+  "nfe-018.xml": {
+    "tipo": "quantidade_maior",
+    "status": "bloqueada",
+    "divergencias": [
+      "quantidade"
+    ]
+  },
+  "nfe-019.xml": {
+    "tipo": "icms_divergente",
+    "status": "bloqueada",
+    "divergencias": [
+      "icms"
+    ]
+  },
+  "nfe-020.xml": {
+    "tipo": "ok",
+    "status": "liberada",
+    "divergencias": []
+  },
+  "nfe-021.xml": {
+    "tipo": "dentro_tolerancia",
+    "status": "liberada",
+    "divergencias": []
+  },
+  "nfe-022.xml": {
+    "tipo": "cancelada_sefaz",
+    "status": "rejeitada",
+    "divergencias": [
+      "cancelada_sefaz"
+    ]
+  }
+}
