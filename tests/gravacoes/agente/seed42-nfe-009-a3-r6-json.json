@@ -1,0 +1,6 @@
+{
+  "role": "assistant",
+  "content": "{\n  \"resumo\": \"A NF 1009 está bloqueada por divergência de quantidade no item 1 (Luva nitrílica). Foram faturadas 7 unidades, mas o pedido e o recebimento físico indicam 5 unidades. O impacto financeiro é de R$ 129,80.\",\n  \"tratativas\": [\n    {\n      \"divergencia\": \"quantidade\",\n      \"acao\": \"solicitar_cancelamento_reemissao\",\n      \"justificativa\": \"A quantidade faturada (7) é maior que a quantidade do pedido (5) e a quantidade recebida (5) para o item 'Luva nitrílica'. Como a divergência afeta a quantidade e o valor, é necessário o cancelamento e reemissão da nota fiscal com a quantidade correta de 5 unidades.\"\n    }\n  ],\n  \"email\": {\n    \"assunto\": \"NF 1009 - Divergência de quantidade - Pedido 4500000009\",\n    \"corpo\": \"Prezados,\\n\\nIdentificamos uma divergência de quantidade na NF 1009, referente ao pedido 4500000009.\\n\\nNo item 'Luva nitrílica (caixa com 100)', a nota fiscal apresenta 7 unidades, enquanto o pedido de compra e o recebimento físico indicam 5 unidades.\\n\\nPara regularização, solicitamos o cancelamento da NF 1009 e a reemissão de uma nova nota fiscal com a quantidade correta de 5 unidades para o item mencionado.\\n\\nAtenciosamente,\\n[Seu Nome]\\nAnalista de Recebimento Fiscal\"\n  }\n}",
+  "refusal": null,
+  "reasoning": null
+}

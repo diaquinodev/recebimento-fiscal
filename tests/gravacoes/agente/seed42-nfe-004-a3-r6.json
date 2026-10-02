@@ -1,0 +1,6 @@
+{
+  "role": "assistant",
+  "content": "{\"resumo\": \"A NF-e 1004 da Elétrica Ômega Ltda. está bloqueada por falta de recebimento físico da mercadoria, impactando em R$ 2.835,00. O pedido de compra 4500000004, referente a 50 unidades do item PAR-M8 (Parafuso sextavado M8 x 40), foi emitido em 05/09/2026, mas não há registro de entrada da mercadoria.\", \"tratativas\": [{\"divergencia\": \"sem_recebimento\", \"acao\": \"aguardar_recebimento\", \"justificativa\": \"Não há registro de recebimento físico da mercadoria para o pedido 4500000004, que é o único item da nota. É necessário aguardar a entrada da mercadoria para liberar a nota.\"}], \"email\": {\"assunto\": \"NF-e 1004 - Elétrica Ômega Ltda. - Aguardando Recebimento\", \"corpo\": \"Prezados,\\n\\nInformamos que a NF-e 1004, referente ao pedido 4500000004, encontra-se bloqueada em nosso sistema devido à ausência de registro de recebimento físico da mercadoria.\\n\\nSolicitamos a gentileza de verificar o status da entrega e, caso a mercadoria já tenha sido entregue, nos informar os detalhes para que possamos regularizar a situação.\\n\\nAtenciosamente,\\n[Seu Nome/Departamento]\"}}",
+  "refusal": null,
+  "reasoning": null
+}

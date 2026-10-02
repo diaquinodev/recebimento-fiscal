@@ -1,0 +1,6 @@
+{
+  "role": "assistant",
+  "content": "{\"chave_grupos\": [\"4226\", \"0960\", \"6060\", \"6000\", \"0184\", \"5500\", \"1000\", \"0010\", \"1010\", \"7998\", \"1907\"], \"numero\": 1010, \"serie\": 1, \"data_emissao\": \"2026-09-13\", \"emitente_cnpj\": \"60606060000184\", \"emitente_nome\": \"Embalagens Sigma Ltda.\", \"emitente_uf\": \"SC\", \"destinatario_cnpj\": \"42424242000152\", \"itens\": [{\"codigo\": \"CAB-2.5\", \"descricao\": \"Cabo flexível 2,5 mm² (rolo 100 m)\", \"ncm\": \"85444900\", \"cfop\": \"6102\", \"quantidade\": \"20\", \"valor_unitario\": \"289.00\", \"valor_total\": \"5780.00\", \"base_icms\": \"5780.00\", \"aliquota_icms_pct\": \"18.00\", \"valor_icms\": \"1040.40\", \"aliquota_ipi_pct\": \"5.00\", \"valor_ipi\": \"289.00\", \"pedido\": \"4500000010\", \"item_pedido\": 10}, {\"codigo\": \"LUV-NIT\", \"descricao\": \"Luva nitrilica (caixa com 100)\", \"ncm\": \"40151900\", \"cfop\": \"6102\", \"quantidade\": \"10\", \"valor_unitario\": \"64.90\", \"valor_total\": \"649.00\", \"base_icms\": \"649.00\", \"aliquota_icms_pct\": \"18.00\", \"valor_icms\": \"116.82\", \"aliquota_ipi_pct\": \"0.00\", \"valor_ipi\": \"0.00\", \"pedido\": \"4500000010\", \"item_pedido\": 20}], \"valor_produtos\": \"6429.00\", \"valor_icms\": \"1157.22\", \"valor_ipi\": \"289.00\", \"valor_nota\": \"6718.00\"}",
+  "refusal": null,
+  "reasoning": null
+}

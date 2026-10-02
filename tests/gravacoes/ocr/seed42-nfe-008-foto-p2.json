@@ -1,0 +1,6 @@
+{
+  "role": "assistant",
+  "content": "{\"chave_grupos\": [\"4126\", \"0930\", \"3030\", \"3000\", \"0138\", \"5500\", \"1000\", \"0010\", \"0810\", \"7982\", \"3525\"], \"numero\": 1008, \"serie\": 1, \"data_emissao\": \"2026-09-11\", \"emitente_cnpj\": \"30303030000138\", \"emitente_nome\": \"Lubrificantes Gama S.A.\", \"emitente_uf\": \"PR\", \"destinatario_cnpj\": \"42424242000152\", \"itens\": [{\"codigo\": \"LUV-NIT\", \"descricao\": \"Luva nitrilica (caixa com 100)\", \"ncm\": \"40151900\", \"cfop\": \"6102\", \"quantidade\": \"5\", \"valor_unitario\": \"64.90\", \"valor_total\": \"324.50\", \"base_icms\": \"324.50\", \"aliquota_icms_pct\": \"12.00\", \"valor_icms\": \"38.94\", \"aliquota_ipi_pct\": \"0.00\", \"valor_ipi\": \"0.00\", \"pedido\": \"4500000008\", \"item_pedido\": 10}, {\"codigo\": \"CX-PAP\", \"descricao\": \"Caixa de papelão ondulado 40x30x30\", \"ncm\": \"48191000\", \"cfop\": \"6102\", \"quantidade\": \"5\", \"valor_unitario\": \"4.75\", \"valor_total\": \"23.75\", \"base_icms\": \"23.75\", \"aliquota_icms_pct\": \"12.00\", \"valor_icms\": \"2.85\", \"aliquota_ipi_pct\": \"0.00\", \"valor_ipi\": \"0.00\", \"pedido\": \"4500000008\", \"item_pedido\": 20}], \"valor_produtos\": \"348.25\", \"valor_icms\": \"41.79\", \"valor_ipi\": \"0.00\", \"valor_nota\": \"348.25\"}",
+  "refusal": null,
+  "reasoning": null
+}

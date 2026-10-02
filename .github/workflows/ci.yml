@@ -21,3 +21,9 @@ jobs:
       - run: ruff format --check .
       - run: mypy src
       - run: pytest -q
+      - name: Eval do motor (20 cenários, 480 notas)
+        run: python -m recebimento avaliar --cenarios 20
+      - name: Eval do OCR (respostas reais gravadas)
+        run: python -m recebimento avaliar-ocr
+      - name: Eval do agente (respostas reais gravadas)
+        run: python -m recebimento avaliar-agente --mostrar 0

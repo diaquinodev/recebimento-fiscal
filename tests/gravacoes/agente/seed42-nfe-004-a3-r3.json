@@ -1,0 +1,17 @@
+{
+  "role": "assistant",
+  "content": null,
+  "refusal": null,
+  "reasoning": null,
+  "tool_calls": [
+    {
+      "type": "function",
+      "index": 0,
+      "id": "tool_consultar_pedido_4UiUK204WqzOEWIsScH2",
+      "function": {
+        "name": "consultar_pedido",
+        "arguments": "{\"numero\":\"4500000004\"}"
+      }
+    }
+  ]
+}

@@ -17,7 +17,9 @@ dependencies = [
   "httpx>=0.27",
   "fpdf2>=2.7",
   "pypdf>=4.0",
-  "streamlit>=1.35",
+  "streamlit>=1.64",
+  "pypdfium2>=4.30",
+  "pillow>=10.3",
 ]
 
 [project.optional-dependencies]
@@ -26,6 +28,7 @@ dev = [
   "ruff>=0.5",
   "mypy>=1.10",
   "lxml-stubs",
+  "zeep>=4.2",
 ]
 
 [tool.setuptools.packages.find]
@@ -47,7 +50,7 @@ plugins = ["pydantic.mypy"]
 mypy_path = "src"
 
 [[tool.mypy.overrides]]
-module = ["fpdf.*", "pypdf.*"]
+module = ["fpdf.*", "pypdf.*", "pypdfium2.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

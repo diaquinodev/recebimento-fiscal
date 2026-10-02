@@ -1,0 +1,6 @@
+{
+  "role": "assistant",
+  "content": "{\"resumo\": \"A NF-e 1005 do fornecedor Embalagens Sigma Ltda. (CNPJ 60.606.060/0001-84) está bloqueada devido a uma divergência no ICMS do item 1. A nota apresenta ICMS de 18% (R$ 17,10), enquanto o pedido de compra 4500000005 indica 12% (R$ 11,40), gerando um impacto de R$ 5,70. O histórico do fornecedor mostra que divergências de ICMS já ocorreram anteriormente.\", \"tratativas\": [{\"divergencia\": \"icms\", \"acao\": \"solicitar_cancelamento_reemissao\", \"justificativa\": \"A divergência no ICMS (18% na nota vs. 12% no pedido) afeta o valor do imposto e não pode ser corrigida por carta de correção. É necessário que o fornecedor cancele a NF-e e emita uma nova com a alíquota correta.\"}], \"email\": {\"assunto\": \"NF-e 1005 - Divergência de ICMS\", \"corpo\": \"Prezado(a) Embalagens Sigma Ltda.,\\n\\nIdentificamos uma divergência na NF-e 1005, referente ao pedido 4500000005. O ICMS do item 'Caixa de papelão ondulado 40x30x30' está com alíquota de 18% na nota, enquanto o pedido de compra indica 12%.\\n\\nPara regularização, solicitamos o cancelamento desta NF-e e a emissão de uma nova com a alíquota de ICMS correta (12%).\\n\\nQualquer dúvida, estamos à disposição.\"}}",
+  "refusal": null,
+  "reasoning": null
+}
