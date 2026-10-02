@@ -27,6 +27,11 @@ def main(argv: list[str] | None = None) -> int:
     aval = sub.add_parser("avaliar", help="eval do motor contra o gabarito")
     aval.add_argument("--cenarios", type=int, default=20)
 
+    api = sub.add_parser(
+        "api", help="sobe a API (SOAP + SEFAZ simulado + JSON) com o ERP de exemplo"
+    )
+    api.add_argument("--porta", type=int, default=8000)
+
     args = parser.parse_args(argv)
     if args.comando == "gerar":
         cenario = gerar_cenario(seed=args.seed, repeticoes=args.repeticoes)
@@ -53,6 +58,10 @@ def main(argv: list[str] | None = None) -> int:
         for exemplo in r.exemplos_erro:
             print("  ✕", exemplo)
         return 0 if r.perfeito else 1
+    elif args.comando == "api":
+        import uvicorn
+
+        uvicorn.run("recebimento.api:app_demo", factory=True, host="127.0.0.1", port=args.porta)
     return 0
 
 

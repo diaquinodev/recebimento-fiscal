@@ -29,6 +29,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column, relationship
+from sqlalchemy.pool import StaticPool
 
 from recebimento.dominio import (
     Fornecedor,
@@ -119,7 +120,12 @@ class NotaEntradaRow(Base):
 
 
 def criar_engine(url: str = "sqlite:///:memory:") -> Engine:
-    engine = create_engine(url)
+    if url.endswith(":memory:"):
+        # Banco em memória existe só dentro de UMA conexão. A API atende em várias threads,
+        # então todas precisam compartilhar a mesma conexão (StaticPool).
+        engine = create_engine(url, connect_args={"check_same_thread": False}, poolclass=StaticPool)
+    else:
+        engine = create_engine(url)
     Base.metadata.create_all(engine)
     return engine
 
