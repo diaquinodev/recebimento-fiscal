@@ -9,6 +9,31 @@ bloqueia o pagamento quando algo não bate e usa IA para **ler DANFE por imagem*
 
 ![Painel do analista](docs/img/painel.png)
 
+## Teste online
+
+**[recebimento-fiscal.streamlit.app](https://recebimento-fiscal.streamlit.app)** — modo
+demonstração, sem cadastro e sem custo. Cada visitante tem o próprio banco: o que você aprova
+não aparece para outra pessoa, e tudo volta ao zero ao fechar a aba.
+
+```mermaid
+flowchart TD
+  A[Processar as 24 NF-e de exemplo] --> B[Painel: liberadas, bloqueadas,<br/>rejeitadas e pagamento retido]
+  B --> C[Abrir uma nota bloqueada]
+  C --> D[Ver a divergência e o impacto em R$]
+  D --> E[Pedir parecer ao agente]
+  E --> F[Agente consulta o ERP<br/>e propõe a tratativa]
+  F --> G{Travas de negócio<br/>em código}
+  G -- proposta inválida --> F
+  G -- válida --> H[Analista edita o e-mail]
+  H --> I[Aprovar] & J[Recusar]
+  B --> K[Barra lateral: ler DANFE<br/>fotografada com OCR]
+  K --> B
+```
+
+Roteiro de 2 minutos: processe as notas, abra a `nfe-002.xml` (preço acima do pedido), peça o
+parecer e aprove. Depois troque o filtro para **rejeitada** e veja por que as notas nem
+chegaram ao match (chave inválida, duplicada, cancelada no SEFAZ).
+
 ## O problema
 
 Antes de pagar um fornecedor, empresas grandes conferem três documentos:
@@ -168,6 +193,8 @@ tests/          72 testes + respostas reais gravadas da IA
   Oracle** (próxima fase, com Oracle Free em Docker).
 - A leitura por imagem serve para **triagem**: o documento fiscal é o XML.
 - O modo demonstração da tela reproduz respostas gravadas **só para o cenário de exemplo**.
+- O link público não tem chave de IA configurada: lá, o modo "real" volta sozinho para a
+  demonstração (ninguém gasta crédito da conta).
 
 ## Próximos passos
 
