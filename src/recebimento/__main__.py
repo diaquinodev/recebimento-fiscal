@@ -39,6 +39,10 @@ def main(argv: list[str] | None = None) -> int:
     ocr = sub.add_parser("ocr", help="lê uma DANFE (imagem) com IA e confere em código")
     ocr.add_argument("imagem", type=Path)
 
+    aag = sub.add_parser("avaliar-agente", help="eval do agente nas notas bloqueadas (gravado)")
+    aag.add_argument("--gravar", action="store_true", help="chama a IA e grava o que faltar")
+    aag.add_argument("--mostrar", type=int, default=1, help="quantos pareceres imprimir")
+
     args = parser.parse_args(argv)
     if args.comando == "gerar":
         cenario = gerar_cenario(seed=args.seed, repeticoes=args.repeticoes)
@@ -99,6 +103,29 @@ def main(argv: list[str] | None = None) -> int:
         for p in leitura.problemas:
             print("  ✕", p.mensagem)
         return 0 if leitura.conferida else 1
+    elif args.comando == "avaliar-agente":
+        from recebimento.avaliacao import avaliar_agente
+        from recebimento.ia import Gravado, OpenRouter
+
+        pasta = Path("tests/gravacoes/agente")
+        ia = Gravado(pasta, real=OpenRouter(), modo="gravar") if args.gravar else Gravado(pasta)
+        a = avaliar_agente(ia)
+        print(f"Notas bloqueadas: {a.notas} | pareceres válidos: {a.validos}")
+        print(
+            f"Sem acionar trava de negócio: {a.validos_de_primeira} | formatações: {a.formatacoes}"
+        )
+        print(f"Ferramentas por nota: {a.ferramentas_por_nota}")
+        for acao, qtd in sorted(a.acoes.items()):
+            print(f"  {qtd}x {acao}")
+        for correcao in a.correcoes:
+            print("  trava:", correcao)
+        for parecer in a.pareceres[: args.mostrar]:
+            print(f"\n--- nota {parecer.nota_id} ---\n{parecer.resumo}")
+            for t in parecer.tratativas:
+                print(f"  {t.divergencia} → {t.acao}: {t.justificativa}")
+            print(f"Para: {parecer.email_para}\nAssunto: {parecer.email_assunto}")
+            print(parecer.email_corpo)
+        return 0 if a.validos == a.notas else 1
     return 0
 
 

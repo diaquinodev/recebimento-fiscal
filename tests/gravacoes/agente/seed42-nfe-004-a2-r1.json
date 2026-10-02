@@ -1,0 +1,17 @@
+{
+  "role": "assistant",
+  "content": null,
+  "refusal": null,
+  "reasoning": null,
+  "tool_calls": [
+    {
+      "type": "function",
+      "index": 0,
+      "id": "tool_listar_divergencias_nwnvVLAJOUybZWSngktc",
+      "function": {
+        "name": "listar_divergencias",
+        "arguments": "{\"nota_id\":4}"
+      }
+    }
+  ]
+}

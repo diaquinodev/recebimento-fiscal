@@ -13,6 +13,7 @@ from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from recebimento.agente import Parecer, analisar_nota
 from recebimento.danfe import gerar_imagem
 from recebimento.dominio import NotaFiscal
 from recebimento.erp import Erp, carregar_erp_json, criar_engine, sessao
@@ -171,4 +172,49 @@ def avaliar_ocr(ia: ProvedorIA, seed: int = 42, foto: bool = True) -> RelatorioO
             rel.erradas_detectadas += 1
             codigos_ = [p.codigo for p in leitura.problemas]
             rel.exemplos.append(f"{arquivo}: detectada {fiscais} → {codigos_}")
+    return rel
+
+
+# ============================== agente ==============================
+
+AGENTE_VERSAO = "2"
+
+
+@dataclass
+class RelatorioAgente:
+    notas: int = 0
+    validos: int = 0
+    validos_de_primeira: int = 0  # sem nenhuma trava de negócio acionada
+    formatacoes: int = 0
+    ferramentas_por_nota: list[int] = field(default_factory=list)
+    acoes: Counter[str] = field(default_factory=Counter)
+    correcoes: list[str] = field(default_factory=list)
+    pareceres: list[Parecer] = field(default_factory=list)
+
+
+def avaliar_agente(ia: ProvedorIA, seed: int = 42) -> RelatorioAgente:
+    """Processa o cenário e pede ao agente um parecer para cada nota bloqueada."""
+    rel = RelatorioAgente()
+    with tempfile.TemporaryDirectory() as tmp:
+        pasta = Path(tmp)
+        cen = gerar_cenario(seed=seed)
+        salvar_cenario(cen, pasta)
+        engine = criar_engine()
+        carregar_erp_json(engine, pasta / "erp.json")
+        sefaz = SefazEmMemoria.de_arquivo(pasta / "sefaz.json")
+        with sessao(engine) as s:
+            erp = Erp(s)
+            for arquivo, _ in cen.notas:
+                receber_xml(erp, sefaz, (pasta / "notas" / arquivo).read_bytes(), arquivo)
+            for nota in erp.notas("bloqueada"):
+                id_chamada = f"seed{seed}-{nota.arquivo[:-4]}-a{AGENTE_VERSAO}"
+                parecer = analisar_nota(erp, ia, nota.id, id_chamada=id_chamada)
+                rel.notas += 1
+                rel.validos += parecer.valido
+                rel.validos_de_primeira += parecer.valido and not parecer.correcoes
+                rel.formatacoes += parecer.formatacoes
+                rel.ferramentas_por_nota.append(len(parecer.ferramentas_usadas))
+                rel.acoes.update(f"{t.divergencia}→{t.acao}" for t in parecer.tratativas)
+                rel.correcoes += [f"{nota.arquivo}: {c}" for c in parecer.correcoes]
+                rel.pareceres.append(parecer)
     return rel
